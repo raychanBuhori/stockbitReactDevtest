@@ -1,0 +1,124 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+@font-face {
+  font-family: 'Nunito', sans-serif;
+  src: url('https://fonts.googleapis.com/css2?family=Nunito&display=swap') format();
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
+.body {
+  padding: 0 100px;
+  background-color: #3D5F70;
+}
+
+.container {
+  background-color: whitesmoke;
+  padding: 1rem;
+  min-height: 100vh;
+  max-height: 100vh;
+}
+
+.header {
+  padding: 1.5rem 1rem;
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+
+  div {
+    margin-right: 1rem;
+  }
+
+  &-input {
+    label {
+      margin-right: 0.5rem;
+      font-size: 1.2rem;
+    }
+    input {
+      border: 1px solid #7E8081;
+      width: 500px;
+      border-radius: 5px;
+      padding: 0.8rem;
+    }
+  }
+
+  &-button {
+    button {
+      border: 0;
+      color: whitesmoke;
+      border-radius: 5px;
+      padding: 0.8rem;
+      background-color: #3CA2F1;
+
+      &:hover {
+        background-color: #5799B9;
+      }
+    }
+  }
+}
+
+.movie-list {
+  padding: 1rem 1.5rem;
+  max-height: 80vh;
+  min-height: 80vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.list-pagination {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 0.8rem;
+  div{
+    margin-right: 1rem;
+  }
+
+  .pagination-input {
+    width: 4rem;
+    text-align: center;
+    border-radius: 5px;
+  }
+}
+
+.list-movie {
+  display: flex;
+  flex-direction: row;
+  padding-top: 12px;
+  div{
+    margin: 0 10px;
+  }
+
+  .list-table {
+    td{
+      &:nth-child(2) {
+        width: 15px;
+      }
+    }
+  }
+
+  .list-link {
+    width: 5rem;
+    margin: 1rem 0;
+    padding: 10px;
+    background-color: green;
+    border: 1px solid green;
+    border-radius: 5px;
+    text-align: center;
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
+
