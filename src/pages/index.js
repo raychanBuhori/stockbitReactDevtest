@@ -14,21 +14,26 @@ const MainPage = () => {
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    dispatch(getMovieList({title: search}));
+    dispatch(getMovieList({title: search, page: page}));
   }, [true]);
 
   useEffect(() => {
     if(pagination.currentPage) {
       setPage(currValue => currValue = pagination.currentPage)
     }
-  }, [pagination])
+  }, [pagination]);
+
+  useEffect(() => {
+    const delayDebounceFn = setTimeout(() => {
+      dispatch(getMovieList({title: search}));
+    }, 2000)
+
+    return () => clearTimeout(delayDebounceFn)
+  }, [search])
 
   const handleSearchChange = event => {
     const {value} = event.target;
     setSearch(currValue => currValue = value);
-    // setTimeout(() => {
-    //   dispatch(getMovieList({title: search}))
-    // }, 1000)
   }
 
   const handleSearchEnter = event => {

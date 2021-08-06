@@ -1,9 +1,11 @@
 import {combineReducers} from 'redux';
 
 import movieReducer from './movie/reducer';
+import currentReducer from './currentValue/reducer';
 
 const reducer = combineReducers({
-	movie: movieReducer
+	movie: movieReducer,
+	current: currentReducer
 });
 
 export default reducer;

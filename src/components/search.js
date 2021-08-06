@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Search = props => {
   const {handleChange, handleClick, handleKeyPress} = props;
@@ -17,3 +18,9 @@ const Search = props => {
 }
 
 export default Search;
+
+Search.propTypes = {
+  handleChange: PropTypes.func.isRequired,
+  handleClick: PropTypes.func.isRequired,
+  handleKeyPress: PropTypes.func.isRequired
+}

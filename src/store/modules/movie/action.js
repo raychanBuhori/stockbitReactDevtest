@@ -11,7 +11,7 @@ export const getMovieList = ({title = '', page = 1}) => async dispatch => {
   await dispatch({type: CLEAR_MOVIE_STATE});
   await axios({
     method: 'GET',
-    url: `http://www.omdbapi.com/?apikey=faf7e5bb&s=${title}&page=${page}`,
+    url: `http://www.omdbapi.com/?apikey=394df02c&s=${title}&page=${page}`,
   }).then(resp => {
     const {Response, Search, totalResults} = resp.data;
     if(Response) {
@@ -30,10 +30,15 @@ export const getMovieDetail = ({id = ''}) => async dispatch => {
   await dispatch({type: CLEAR_MOVIE_STATE});
   await axios({
     method: 'GET',
-    url: `http://www.omdbapi.com/?apikey=faf7e5bb&i=${id}&plot=full&r=json`,
+    url: `http://www.omdbapi.com/?apikey=394df02c&i=${id}&plot=full&r=json`,
   }).then(resp => {
-    console.log(resp);
+    const {data} = resp;
+    if(data) {
+      return dispatch({type: GET_MOVIE_DETAIL, payload: data});
+    }
+    return dispatch({type: FAILED});
   }).catch(error => {
     console.log(error);
+    return dispatch({type: FAILED});
   })
 }

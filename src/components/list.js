@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const List = props => {
   const {list, handleDetail} = props;
@@ -41,8 +42,13 @@ const List = props => {
     )
   } 
   return (
-    <h6>The movie doesn't exist</h6>
+    <h6 style={{textAlign: 'center'}}>The movie doesn't exist</h6>
   );
 }
 
 export default List;
+
+List.propTypes = {
+  list: PropTypes.array.isRequired,
+  handleDetail: PropTypes.func.isRequired
+}

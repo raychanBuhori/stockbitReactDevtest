@@ -10,8 +10,8 @@ function App() {
   return (
     <Router history={history}>
       <Switch>
-        <Route exact path='' component={Page} />
-        <Route exact path='/detail' component={DetailPage} />
+        <Route exact path='/' component={Page} />
+        <Route path='/detail' component={DetailPage} />
       </Switch>  
     </Router>
   );

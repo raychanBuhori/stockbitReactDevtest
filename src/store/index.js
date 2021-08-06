@@ -8,7 +8,8 @@ const store = createStore(reducer, persistedState, applyMiddleware(reduxThunk));
 
 store.subscribe(() => {
 	saveState({
-		movie: store.getState().movie
+		movie: store.getState().movie,
+		current: store.getState().current
 	});
 });
 
